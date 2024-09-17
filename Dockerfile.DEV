@@ -1,0 +1,32 @@
+# Stage 1: Build the Go binary
+FROM golang:alpine AS builder
+
+RUN apk add --no-cache git
+
+WORKDIR /app
+
+COPY go.mod go.sum ./
+
+RUN go mod download
+
+COPY . .
+
+RUN go build -o /goapp .
+
+# Stage 2: Create a smaller image with just the binary
+FROM alpine:latest
+
+RUN apk --no-cache add ca-certificates
+
+WORKDIR /root/
+
+COPY --from=builder /goapp .
+
+ENV APP_ENV="DEV" \
+    POSTGRES_DB_URL="host=localhost user=postgres password=mysecretpassword dbname=postgres port=5431 sslmode=disable TimeZone=Asia/Kolkata" \
+    APP_PORT=":50051" \
+    JWT_KEY="hanshal101" 
+
+EXPOSE 50051
+
+CMD ["./goapp"]
