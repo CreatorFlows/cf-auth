@@ -3,10 +3,11 @@ package postres
 import (
 	"os"
 
-	"github.com/hanshal101/cf-auth/logger"
 	"go.uber.org/zap"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
+
+	"github.com/creatorflows/cf-auth/logger"
 )
 
 var DB *gorm.DB

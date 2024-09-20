@@ -4,12 +4,13 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/hanshal101/cf-auth/config"
-	"github.com/hanshal101/cf-auth/database/models"
-	"github.com/hanshal101/cf-auth/database/postres"
-	"github.com/hanshal101/cf-auth/logger"
-	"github.com/hanshal101/cf-auth/utils"
 	"go.uber.org/zap"
+
+	"github.com/creatorflows/cf-auth/config"
+	"github.com/creatorflows/cf-auth/database/models"
+	"github.com/creatorflows/cf-auth/database/postres"
+	"github.com/creatorflows/cf-auth/logger"
+	"github.com/creatorflows/cf-auth/utils"
 )
 
 func Login(c *gin.Context) {
@@ -48,7 +49,7 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	c.SetCookie("tokenCF", tokenString, int(config.EXP_TIME	.Unix()), "/", "", false, false)
+	c.SetCookie("tokenCF", tokenString, int(config.EXP_TIME.Unix()), "/", "", false, false)
 	c.JSON(http.StatusOK, gin.H{"success": tokenString})
 }
 

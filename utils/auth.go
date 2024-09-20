@@ -2,8 +2,9 @@ package utils
 
 import (
 	"github.com/dgrijalva/jwt-go"
-	"github.com/hanshal101/cf-auth/config"
-	"github.com/hanshal101/cf-auth/database/models"
+
+	"github.com/creatorflows/cf-auth/config"
+	"github.com/creatorflows/cf-auth/database/models"
 )
 
 func CreateClaims(role, email string, exp_time int64) (string, error) {

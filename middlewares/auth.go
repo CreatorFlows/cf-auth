@@ -4,7 +4,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/hanshal101/cf-auth/utils"
+
+	"github.com/creatorflows/cf-auth/utils"
 )
 
 func IsAuthorized() gin.HandlerFunc {

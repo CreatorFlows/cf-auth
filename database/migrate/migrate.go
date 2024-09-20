@@ -1,9 +1,9 @@
 package migrate
 
 import (
-	"github.com/hanshal101/cf-auth/database/models"
-	"github.com/hanshal101/cf-auth/database/postres"
-	"github.com/hanshal101/cf-auth/logger"
+	"github.com/creatorflows/cf-auth/database/models"
+	"github.com/creatorflows/cf-auth/database/postres"
+	"github.com/creatorflows/cf-auth/logger"
 )
 
 func AutoMigrate() {

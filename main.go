@@ -5,12 +5,13 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	"github.com/hanshal101/cf-auth/config"
-	"github.com/hanshal101/cf-auth/database/migrate"
-	"github.com/hanshal101/cf-auth/database/postres"
-	"github.com/hanshal101/cf-auth/logger"
-	"github.com/hanshal101/cf-auth/routes"
 	"github.com/joho/godotenv"
+
+	"github.com/creatorflows/cf-auth/config"
+	"github.com/creatorflows/cf-auth/database/migrate"
+	"github.com/creatorflows/cf-auth/database/postres"
+	"github.com/creatorflows/cf-auth/logger"
+	"github.com/creatorflows/cf-auth/routes"
 )
 
 func init() {

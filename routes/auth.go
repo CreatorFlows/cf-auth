@@ -2,8 +2,9 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/hanshal101/cf-auth/controllers"
-	"github.com/hanshal101/cf-auth/middlewares"
+
+	"github.com/creatorflows/cf-auth/controllers"
+	"github.com/creatorflows/cf-auth/middlewares"
 )
 
 func AuthRoutes(r *gin.Engine) {
