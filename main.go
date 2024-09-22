@@ -29,5 +29,6 @@ func main() {
 	r := gin.New()
 	r.Use(gin.Logger())
 	routes.AuthRoutes(r)
+	routes.EditorAuthRoutes(r)
 	r.Run(os.Getenv("APP_PORT"))
 }

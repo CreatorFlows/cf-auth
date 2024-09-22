@@ -16,3 +16,9 @@ func AuthRoutes(r *gin.Engine) {
 	r.POST("/conv/premium", controllers.ConverttoPremium)
 	r.GET("/logout", controllers.Logout)
 }
+
+func EditorAuthRoutes(r *gin.Engine) {
+	r.GET("/editor", controllers.Editor)
+	r.POST("/editor/login", controllers.EditorLogin)
+	r.GET("/editor/logout", controllers.EditorLogout)
+}
